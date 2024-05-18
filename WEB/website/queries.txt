@@ -1,0 +1,42 @@
+I WILL USE THE FOLLOWING DATABASE AS THE TEMPLATE FOR THE QUERIES
+
+	id INTEGER NOT NULL, 
+	word VARCHAR(120) NOT NULL, 
+	translation VARCHAR(120), 
+	sentence VARCHAR(1000), 
+	part_of_speech VARCHAR(120), 
+	difficulty VARCHAR(120), 
+	user_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(user_id) REFERENCES user (id)
+
+#Query to get the next ten entries
+"SELECT * FROM (databasename) LIMIT 10; "
+#same for a specific User with user_id XXX:
+"SELECT * FROM (databasename) WHERE user_id=XXX LIMIT 10; "
+
+
+#Query to get the 10 words with the highest diffficulty
+"SELECT * FROM (databasename) ORDER BY difficulty DESC LIMIT 10; "
+#same for a specific User with user_id XXX:
+"SELECT * FROM (databasename) WHERE user_id=XXX ORDER BY difficulty DESC LIMIT 10; "
+
+
+#Query to get the 10 words with the lowest diffficulty:
+"SELECT * FROM (databasename) ORDER BY difficulty ASC LIMIT 10; "
+#same for a specific User with user_id XXX:
+"SELECT * FROM (databasename) WHERE user_id=XXX ORDER BY difficulty ASC LIMIT 10; "
+
+
+#Query to get all the entries that are a specific part of (part_of_speech='category')
+"SELECT * FROM (databasename) WHERE part_of_speech=;'category'"
+#same for a specific User with user_id XXX:
+"SELECT * FROM (databasename) WHERE part_of_speech=;'category' AND user_id=XXX"
+
+
+#Query to get all the entries in alphabetical order:
+"SELECT * FROM (databasename) ORDER BY translation ASC; "
+
+
+
+

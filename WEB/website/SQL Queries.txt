@@ -1,0 +1,25 @@
+id INTEGER NOT NULL, 
+	word VARCHAR(120) NOT NULL, 
+	translation VARCHAR(120), 
+	sentence VARCHAR(1000), 
+	part_of_speech VARCHAR(120), 
+	difficulty VARCHAR(120), 
+	user_id INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(user_id) REFERENCES user (id)
+query to get ten first words with translation and id and user _id: 
+    SELECT * 
+    FROM DATABASE
+    
+    
+
+
+
+
+    SELECT *
+FROM Personen
+WHERE EXISTS (
+SELECT P2.*
+FROM Personen AS P2
+WHERE Personen.Vorname = P2.Vorname AND
+Personen.PersId <> P2.PersId
